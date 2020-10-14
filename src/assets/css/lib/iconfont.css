@@ -25,7 +25,7 @@
 .icon-tips-xiaoxi::before { content: "\e607"; }
 .icon-chat-person::before { content: "\e60c"; }
 .icon-chat-friends::before { content: "\e60c"; }
-.icon-more::before { content: "\e60b"; }
+.icon-more::before { content: "\e60b  "; }
 .icon-tips-saoyisao::before { content: "\e608"; }
 .icon-wechat::before { content: "\e600"; }
 .icon-me::before { content: "\e601"; }

@@ -1,22 +1,22 @@
 <template>
   <div id="app">
-    <welcome></welcome>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <welcome> </welcome>
+    <footer class="app-footer">
+      <WxNav> </WxNav>
+    </footer>
   </div>
 </template>
 
 <script>
-import welcome from './components/common/Welcome'
+import welcome from "./components/common/Welcome"
+import WxNav from "./components/common/wx-nav"
 
 export default {
-  name:'app',
+  name: "app",
   components: {
-    welcome
-  }
+    welcome,
+    WxNav,
+  },
 }
 </script>
 
@@ -35,4 +35,16 @@ export default {
 /*weui 样式库 非常适合高仿微信*/
 
 @import "assets/css/lib/weui.min.css";
+
+/** 通用样式 */
+@import "assets/less/mixin.less";
+
+#app{
+  .app-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
 </style>
