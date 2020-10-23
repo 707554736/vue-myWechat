@@ -23,7 +23,8 @@
       </router-link>
       <router-link to="/self" tag="a">
         <div class="menu-item">
-          <span class="iconfont icon-me"></span>
+          <!-- <span class="iconfont icon-me"></span> -->
+          <span class="iconfont icon-jiantou32"></span>
           <span class="title">我</span>
         </div>
       </router-link>
@@ -36,9 +37,9 @@ export default {}
 </script>
 
 <style lang="less" scoped>
-@import "../../assets/less/mixin.less";
+@import '../../assets/less/mixin.less';
 @r: 0.068376rem;
-@wx-color:#0bb908;
+@wx-color: #0bb908;
 #wx-nav {
   nav {
     .size(100%, 52px);
@@ -64,7 +65,7 @@ export default {}
       }
     }
 
-    .router-link-active{
+    .router-link-active {
       color: @wx-color;
     }
   }
