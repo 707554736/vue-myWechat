@@ -1,0 +1,243 @@
+.size(@size) {
+    width: @size;
+    height: @size;
+  }
+  
+  .size(@width, @height) {
+    width: @width;
+    height: @height;
+  }
+  
+  .t-ellipses() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+  }
+  
+  .t-m-ellipses(@line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @line;
+    -webkit-box-orient: vertical;
+  }
+  
+  .transition(@attr, @time: 0.2s, @easing: ease, @delay: 0s) {
+    transition+: @attr @time @easing @delay;
+  }
+  
+  .clearfix() {
+    &::after {
+      display: table;
+      content: "";
+      clear: both;
+    }
+  }
+  
+  .filter(@attr) {
+    filter+_: @attr;
+  }
+  
+  .absolute(@all: 0) {
+    position: absolute;
+    top: @all;
+    right: @all;
+    bottom: @all;
+    left: @all;
+  }
+  
+  .absolute(@top, @right, @bottom, @left) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+  }
+  
+  .padding-tb(@all) {
+    .padding-tb(@all, @all);
+  }
+  
+  .padding-tb(@top, @bottom) {
+    padding-top: @top;
+    padding-bottom: @bottom;
+  }
+  
+  .padding-lr(@all) {
+    .padding-lr(@all, @all);
+  }
+  
+  .padding-lr(@left, @right) {
+    padding-left: @left;
+    padding-right: @right;
+  }
+  
+  .fixed(@top: 0, @right: 0, @bottom: 0, @left: 0) {
+    position: fixed;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+  }
+  
+  .text-ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+  }
+  
+  .h-lh(@height) {
+    height: @height;
+    line-height: @height;
+  }
+  
+  .circle(@size) {
+    width: @size;
+    height: @size;
+    border-radius: @size / 2;
+  }
+  
+  .flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-center-v() {
+    display: flex;
+    align-items: center;
+  }
+  
+  //pseudo arrows
+  .pseudo-arrow(@size: 10px; ) {
+    box-sizing: content-box;
+    content: "";
+    display: inline-block;
+    .size(0);
+    border: @size solid transparent;
+  }
+  
+  .pseudo-arrow-up(@size: 10px; @color: white) {
+    .pseudo-arrow(@size);
+    border-bottom-color: @color;
+  }
+  
+  .pseudo-arrow-down(@size: 10px; @color: white) {
+    .pseudo-arrow(@size);
+    border-top-color: @color;
+  }
+  
+  .pseudo-arrow-left(@size: 10px; @color: white) {
+    .pseudo-arrow(@size);
+    border-right-color: @color;
+  }
+  
+  .pseudo-arrow-right(@size: 10px; @color: white) {
+    .pseudo-arrow(@size);
+    border-left-color: @color;
+  }
+  
+  //pseudo borders
+  .pseudo-border-h(@color; @padding: 5px; @size: 1px) {
+    content: "";
+    display: block;
+    height: @size;
+    background: @color;
+    .absolute(auto, @padding, auto, @padding);
+  }
+  
+  .pseudo-border-h(@color; @paddingTop: 5px; @paddingRight: 5px; @paddingBottom: 5px; @paddingLeft: 5px; @size: 1px) {
+    content: "";
+    display: block;
+    height: @size;
+    background: @color;
+    .absolute(@paddingTop, @paddingRight, @paddingBottom, @paddingLeft);
+  }
+  
+  .pseudo-border-v(@color; @padding: 5px; @size: 1px) {
+    content: "";
+    display: block;
+    width: @size;
+    background: @color;
+    .absolute(@padding, auto, @padding, auto);
+  }
+  
+  .pseudo-border-top(@color; @padding: 5px; @size: 1px) {
+    .pseudo-border-h(@color, @padding, @size);
+    top: 0;
+  }
+  
+  .pseudo-border-bottom(@color; @padding: 5px; @size: 1px) {
+    .pseudo-border-h(@color, @padding, @size);
+    bottom: 0;
+  }
+  
+  .pseudo-border-bottom(@color; @paddingLeft: 5px; @paddingRight: 5px; @size: 1px) {
+    .pseudo-border-h(@color, 0, @paddingRight, 0, @paddingLeft, @size);
+    bottom: 0;
+  }
+  
+  .pseudo-border-left(@color; @padding: 5px; @size: 1px) {
+    .pseudo-border-v(@color, @padding, @size);
+    left: 0;
+  }
+  
+  .pseudo-border-right(@color; @padding: 5px; @size: 1px) {
+    .pseudo-border-v(@color, @padding, @size);
+    right: 0;
+  }
+  
+  
+  // placeholder 的颜色修改
+  .placeholder-color(@color) {
+    input::-webkit-input-placeholder {
+      color: @color;
+    }
+  }
+  
+  .pretty-scroll-bar() {
+    &::-webkit-scrollbar {
+      .size(6px);
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      .size(6px);
+      border-radius: 10px;
+      background-color: #d5d5d5;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+  }
+  
+  .icon-vertical-bias() {
+    position: relative;
+    top: 1px;
+  }
+  
+  // 滚动条的样式
+  .pretty-scroll-bar(@width: 6px, @height: 6px, @background: #c8c8c8) {
+    &::-webkit-scrollbar {
+      width: @width;
+      height: @height;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background: @background;
+      cursor: pointer;
+  
+      &:hover {
+        background: #bebebe;
+      }
+  
+      &:active {
+        background: #b0b0b0;
+      }
+    }
+  }
+  
