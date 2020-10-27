@@ -4,6 +4,8 @@
     <footer class="app-footer">
       <WxNav></WxNav>
     </footer>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App111" />
   </div>
 </template>
 
